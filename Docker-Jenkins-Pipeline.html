@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>simplilearn-project.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h2 id="this-project-implements-a-docker-jenkins-pipeline-for-cicd-utilizing-docker-github-docker-hub-and-jenkins-it-automates-build-test-and-deployment-processes-ensuring-efficient-version-tracking-and-high-quality-product-delivery">This project implements a Docker Jenkins Pipeline for CI/CD, utilizing Docker, GitHub, Docker Hub, and Jenkins. It automates build, test, and deployment processes, ensuring efficient version tracking and high-quality product delivery.</h2>
+<h2 id="installation-of-pre-requisites-tools-needed-for-the-implementation-of-the-project">Installation Of Pre-requisites/ Tools Needed For The Implementation Of The Project</h2>
+<ol>
+<li>Install and check java (1.8)</li>
+</ol>
+<p><code>sudo apt update</code></p>
+<p><code>sudo apt install -y openjdk-8-jdk</code></p>
+<p><code>java -version</code></p>
+<p><img src="./images2/java-version.png" alt="java-version"></p>
+<ol start="2">
+<li>Install &amp; check jenkins (make sure to check whether jenkins is running on port 8080)</li>
+</ol>
+<ul>
+<li>Add the Jenkins key:</li>
+</ul>
+<p><code> wget -q -O – https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo     apt-key add –</code></p>
+<ul>
+<li>
+<p>Add the jenkins pkg repo to package manager:
+Edit the file:</p>
+<p><code>sudo nano /etc/apt/sources.list</code></p>
+</li>
+<li>
+<p>Add this line at the end of the file and save it:</p>
+<p><code>deb https://pkg.jenkins.io/debian-stable binary/</code></p>
+<p><img src="./images2/add-file-jenkins.png" alt="addedfile-sourceslist"></p>
+</li>
+<li>
+<p>Execute:</p>
+<p><code>sudo apt-get update</code></p>
+</li>
+<li>
+<p>Install Jenkins:</p>
+</li>
+</ul>
+<p><code>sudo apt-get install -y jenkins</code></p>
+<ul>
+<li>Manually restart the jenkins server:</li>
+</ul>
+<p><code>sudo systemctl restart jenkins</code></p>
+<p><img src="./images2/jenkinsui.png" alt="jenkins-ui"></p>
+<p><img src="./images2/jenkins-login.png" alt="jenkins-login"></p>
+<ol start="3">
+<li>Install &amp; check Docker</li>
+</ol>
+<p><code>sudo apt-get update</code></p>
+<p><code>sudo apt-get install -y docker.io</code></p>
+<p><code>docker --version</code></p>
+<p><img src="./images2/docker-version.png" alt="dockerverion"></p>
+<ol start="4">
+<li>
+<p>Install &amp; check git</p>
+<p><code>sudo apt-get update</code></p>
+<p><code>sudo apt-get install -y git</code></p>
+<ul>
+<li>Verify git installation</li>
+</ul>
+<p><code>git --version</code></p>
+<ul>
+<li>Configure git</li>
+</ul>
+<p><code>git config --global user.email &quot;YOUR_EMAIL_ID</code></p>
+<p><code>git config --global user.name &quot;YOUR_USER_NAME</code></p>
+<p><code>git config --list</code></p>
+<p><img src="./images2/config-list.png" alt="config-list"></p>
+</li>
+</ol>
+<ul>
+<li>
+<p>Create a GitHub repository under your account</p>
+</li>
+<li>
+<p>Your_github_project_url</p>
+</li>
+</ul>
+<p><code>git@github.com:Taofeek-Adedokun/-Docker-Jenkins-Pipeline-for-CI-CD.git</code></p>
+<p><img src="./images2/ Docker Jenkins Pipeline for CI:CD.png" alt="Docker-jenkinsci/cd"></p>
+<ul>
+<li>Clone your repository in your linux machine</li>
+</ul>
+<p><code>git clone git@github.com:Taofeek-Adedokun/Docker-Jenkins-Pipeline-for-CI-CD.git</code></p>
+<p><code>cd Docker-Jenkins-Pipeline-for-CI-CD</code></p>
+<p><img src="./images2/git-clone.png" alt="git-clone"></p>
+<h2 id="create-the-files-required-inside-this-local-repo-check-whether-the-dockerfile-is-working-without-any-error-and-able-to-build-image">Create the files required inside this local repo. Check whether the Dockerfile is working without any error and able to build image.</h2>
+<p><code>nano Dockerfile</code></p>
+<p>FROM openjdk:8</p>
+<p>COPY . /var/www/java</p>
+<p>WORKDIR /var/www/java</p>
+<p>RUN javac Hello.java</p>
+<p>CMD [&quot;java&quot;, &quot;Hello&quot;]</p>
+<p><code>cd ..</code></p>
+<p><code>nano Hello.java</code></p>
+<p>class Hello {
+public static void main(String[] args) {
+System.out.println(&quot;This is a java app created using Docker&quot;);
+}
+}</p>
+<h3 id="test-the-image-creation">Test the image creation:</h3>
+<p><code>docker build -t test_image .</code></p>
+<p><img src="./images2/test-images.png" alt="test-images"></p>
+<p><code>docker images</code></p>
+<p><img src="./images2/dockerimages1.png" alt="dockerimages1"></p>
+<p><code>docker rmi test_image</code></p>
+<p><img src="./images2/docker-rmi.png" alt="docker-rmi"></p>
+<h3 id="add-the-files-to-the-local-repo-commit-the-changes--push-the-changes-to-remote-repo-and-make-sure-the-changes-are-reflected-in-the-remote-repo">Add the files to the local repo, commit the changes &amp; push the changes to remote repo. And make sure the changes are reflected in the remote repo</h3>
+<p><code>git add .</code></p>
+<p><code>git commit -m &quot;Dockerfile created for new image</code></p>
+<p><code>git push origin main</code></p>
+<p><img src="./images2/git-push.png" alt="git-push1st"></p>
+<h2 id="open-jenkins-create-a-freestyle-project-use-the-github-url-as-the-scm-in-the-build-section-execute-docker-build-command-to-test-whether-jenkins-is-able-to-execute-it">Open Jenkins, create a freestyle project. Use the Github url as the SCM. In the build section execute docker build command to test whether jenkins is able to execute it.</h2>
+<ul>
+<li>
+<p>Jenkins &gt; New Item &gt; Freestyle project (BuildJob)</p>
+</li>
+<li>
+<p>SCM &gt; Git &gt; https://github.com/Taofeek-Adedokun Docker-Jenkins-Pipeline-for-CI-CD.git</p>
+</li>
+</ul>
+<p><img src="./images2/git-config.png" alt="git-config"></p>
+<ul>
+<li>
+<p>Build &gt; Add build step &gt; Execute Shell
+<code>docker build -t neyo_mypro_image .</code></p>
+<p><code>docker login -u neyomr47 -p *******</code></p>
+</li>
+</ul>
+<p><code>docker tag neyo_mypro_image neyomr47/neyo_mypro_image:latest</code></p>
+<p><code>docker push neyomr47/neyo_mypro_image:latest</code></p>
+<p><img src="./images2/shell-exec.png" alt="shell-exec"></p>
+<ul>
+<li>
+<p>Save</p>
+</li>
+<li>
+<p>Build the Job</p>
+<ul>
+<li>Check the build console. If you get permission error, execute the below steps</li>
+</ul>
+<p><img src="./images2/first-error.png" alt="first-error"></p>
+<p><code>sudo usermod -aG docker jenkins</code></p>
+</li>
+<li>
+<p>Restart Jenkins</p>
+<p><code>sudo systemctl restart jenkins</code></p>
+<p><code>sudo chmod 777 /var/run/docker.sock</code></p>
+</li>
+</ul>
+<p><img src="./images2/permission-resolved.png" alt="permission-resolved"></p>
+<ul>
+<li>
+<p>Relogin &amp; build the job once again</p>
+<p><code>docker images</code></p>
+</li>
+</ul>
+<p><img src="./images2/permission-resolved.png" alt="permission-resolved"></p>
+<p><img src="./images2/img-pushed-dockerhub.png" alt="my-docker-image"></p>
+<h3 id="automate-the-process-using-jenkins-build-trigger">Automate the process using Jenkins Build Trigger</h3>
+<ul>
+<li>
+<p>Automate</p>
+</li>
+<li>
+<p>Build Trigger</p>
+</li>
+<li>
+<p>Poll SCM - duration * * * * *</p>
+</li>
+</ul>
+<p><img src="./images2/git-poll-scm.png" alt="poll-scm"></p>
+<p><img src="./images2/git-poll-scm.png" alt="poll-scm2"></p>
+<h3 id="in-conclusion-the-implementation-of-the-docker-jenkins-pipeline-marks-a-pivotal-achievement-in-enabling-continuous-integration-and-delivery-by-leveraging-docker-github-docker-hub-and-jenkins-weve-streamlined-development-workflows-and-ensured-efficient-version-tracking">In conclusion, the implementation of the Docker Jenkins Pipeline marks a pivotal achievement in enabling continuous integration and delivery. By leveraging Docker, GitHub, Docker Hub, and Jenkins, we've streamlined development workflows and ensured efficient version tracking.</h3>
+
+</body>
+</html>
